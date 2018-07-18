@@ -1,0 +1,24 @@
+<div class="login-component">
+  <h1>Sign In</h1>
+
+  <div *ngIf="errorMsg != null" class="alert alert-danger">
+    {{ errorMsg }}
+  </div>
+
+  <mat-form-field>
+    <input matInput id="emailInputSignin" type="email" placeholder="Email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="passwordInputSignin" type="password" placeholder="Password" pattern=".*" required>      
+  </mat-form-field>
+  
+  <button mat-button color="primary" (click)="onLogin()">
+    <span>Log in</span>
+  </button>
+  <hr>
+  <p>
+    <a [routerLink]="['/register']"> <i class="fa fa-fw fa-group"></i> Register</a>
+    <a [routerLink]="['/forgotPassword']"> <i class="fa fa-fw fa-group"></i> Forgot Password?</a><br/>
+    <a [routerLink]="['/resendCode']"> <i class="fa fa-fw fa-group"></i> Resend Confirmation Code</a>
+  </p>
+</div>

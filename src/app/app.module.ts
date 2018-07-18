@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GameBoardComponent } from './game-board/game-board.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { CreateGameComponent } from './create-game/create-game.component';
 import { FindGamesComponent } from './find-games/find-games.component';
 import { ViewGameComponent } from './view-game/view-game.component';
@@ -15,9 +15,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { NewPasswordComponent } from './auth/new-password/new-password.component';
+import { UserActivityComponent } from './secure/user-activity/user-activity.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     FindGamesComponent,
     ViewGameComponent,
     HomeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    NewPasswordComponent,
+    UserActivityComponent
   ],
   imports: [
     BrowserModule,
