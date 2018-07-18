@@ -1,0 +1,15 @@
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  .menu-icon {
+    margin-left: 14px;
+  }
+
+  .shell-content {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+  }
