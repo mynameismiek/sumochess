@@ -4,19 +4,24 @@
   <div *ngIf="errorMsg != null" class="alert alert-danger">
     {{ errorMsg }}
   </div>
-
+  <br/>
+  
   <mat-form-field>
-    <input matInput id="emailInputSignin" type="email" placeholder="Email" required>
+    <input matInput id="emailInputSignin" type="email" placeholder="Email" 
+      required maxlength="100"
+      [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field>
-    <input matInput id="passwordInputSignin" type="password" placeholder="Password" pattern=".*" required>      
+    <input matInput id="passwordInputSignin" type="password" placeholder="Password" pattern=".*" 
+      required length="40" 
+      [(ngModel)]="password" [ngModelOptions]="{standalone: true}">      
   </mat-form-field>
   <a [routerLink]="['/forgotPassword']" class="forgot-password">Forgot Password?</a>
   
   <button mat-raised-button color="primary" (click)="onLogin()" class="btn-login">
     <span>Log in</span>
   </button>
-  
+
   <hr>
   <button mat-button class="btn-login" [routerLink]="['/register']">
     <span>Register</span>

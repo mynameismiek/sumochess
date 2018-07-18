@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, CognitoCallback, LoggedInCallback
         this.router.navigate(['/home/confirmRegistration', this.email]);
       } else if (this.errorMsg === 'User needs to set password.') {
         console.log('redirecting to set new password');
-        this.router.navigate(['/home/newPassword']);
+        this.router.navigate(['/newPassword']);
       }
     } else { // success
       // this.ddb.writeLogEntry('login');

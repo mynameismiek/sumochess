@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { FindGamesComponent } from './find-games/find-games.component';
 import { ViewGameComponent } from './view-game/view-game.component';
 import { CreateGameComponent } from './create-game/create-game.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'newPassword', component: NewPasswordComponent },
   { path: 'create', component: CreateGameComponent },
   { path: 'find', component: FindGamesComponent },
   { path: 'view/:id', component: ViewGameComponent },

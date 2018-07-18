@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   cognito: {
     userPoolId: 'us-east-1_rudJpkyMo',
-    userPoolClientId: '5542quf681g2204fo6jgbe8s9q',
+    userPoolClientId: '5742kd9njvj6fmmc2nbb9v48o1',
     identityPoolId: '',
     region: 'us-east-1',
     idp_endpoint: '',
