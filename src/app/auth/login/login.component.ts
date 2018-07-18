@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit, CognitoCallback, LoggedInCallback
       console.log('result: ' + this.errorMsg);
       if (this.errorMsg === 'User is not confirmed.') {
         console.log('redirecting');
-        this.router.navigate(['/home/confirmRegistration', this.email]);
+        this.router.navigate(['/confirmRegistration', this.email]);
       } else if (this.errorMsg === 'User needs to set password.') {
         console.log('redirecting to set new password');
         this.router.navigate(['/newPassword']);

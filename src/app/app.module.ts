@@ -22,6 +22,9 @@ import { HomeComponent } from './home/home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { UserActivityComponent } from './secure/user-activity/user-activity.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { ResendComponent } from './auth/resend/resend.component';
+import { ConfirmComponent } from './auth/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { UserActivityComponent } from './secure/user-activity/user-activity.comp
     HomeComponent,
     AdminHomeComponent,
     NewPasswordComponent,
-    UserActivityComponent
+    UserActivityComponent,
+    ForgotPasswordComponent,
+    ResendComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
