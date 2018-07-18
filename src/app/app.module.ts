@@ -9,6 +9,7 @@ import { CreateGameComponent } from './create-game/create-game.component';
 import { FindGamesComponent } from './find-games/find-games.component';
 import { ViewGameComponent } from './view-game/view-game.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -37,6 +38,7 @@ import { UserActivityComponent } from './secure/user-activity/user-activity.comp
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,

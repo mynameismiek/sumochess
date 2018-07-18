@@ -11,14 +11,16 @@
   <mat-form-field>
     <input matInput id="passwordInputSignin" type="password" placeholder="Password" pattern=".*" required>      
   </mat-form-field>
+  <a [routerLink]="['/forgotPassword']" class="forgot-password">Forgot Password?</a>
   
-  <button mat-button color="primary" (click)="onLogin()">
+  <button mat-raised-button color="primary" (click)="onLogin()" class="btn-login">
     <span>Log in</span>
   </button>
+  
   <hr>
-  <p>
-    <a [routerLink]="['/register']"> <i class="fa fa-fw fa-group"></i> Register</a>
-    <a [routerLink]="['/forgotPassword']"> <i class="fa fa-fw fa-group"></i> Forgot Password?</a><br/>
-    <a [routerLink]="['/resendCode']"> <i class="fa fa-fw fa-group"></i> Resend Confirmation Code</a>
-  </p>
+  <button mat-button class="btn-login" [routerLink]="['/register']">
+    <span>Register</span>
+  </button>
+  <br/>
+  <a [routerLink]="['/resendCode']" class="resend-code">Resend Confirmation Code</a>
 </div>
