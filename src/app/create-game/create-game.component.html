@@ -1,3 +1,47 @@
-<p>
-  create-game works!
-</p>
+<mat-card class="create-game">
+  <h2>Create a match</h2>
+
+  <form #CreateForm="ngForm" (ngSubmit)="createGame(CreateForm)">
+    <p>
+      <mat-form-field>
+        <input matInput type="text" name="name" placeholder="Name of the game" [(ngModel)]="game.name" required>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <span>Team:&nbsp;&nbsp;</span>
+      <mat-slide-toggle name="player1Team" color="primary" (toggleChange)="toggleTeam()"  [(ngModel)]="game.player1Team">
+        {{ selectedTeam | enumToString:TeamType }}
+      </mat-slide-toggle>
+    </p>
+
+    <p>
+      <span>Privacy:&nbsp;&nbsp;</span>
+      <mat-slide-toggle color="primary" [checked]="isPublic" (toggleChange)="togglePrivacy()">
+        {{ privacy }}
+      </mat-slide-toggle>
+    </p>
+
+    <p>
+      <mat-form-field *ngIf="!isPublic">
+        <input matInput type="text" name="player2" placeholder="Invite user" [(ngModel)]="game.player2" [required]="!isPublic">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-select name="turnLength" placeholder="Turn length" [(ngModel)]="game.turnLength" required>
+          <mat-option *ngFor="let turnOpt of turnOptions" [(value)]="game.turnLength">
+            {{ turnOpt.display }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <button mat-button color="primary" type="submit" [disabled]="!CreateForm.form.valid">
+        <span>Create</span>
+      </button>
+    </p>
+  </form>
+</mat-card>

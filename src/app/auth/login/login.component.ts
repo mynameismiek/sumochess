@@ -43,13 +43,13 @@ export class LoginComponent implements OnInit, CognitoCallback, LoggedInCallback
       }
     } else { // success
       // this.ddb.writeLogEntry('login');
-      this.router.navigate(['/securehome']);
+      this.router.navigate(['/home']);
     }
   }
 
   isLoggedIn(message: string, loggedIn: boolean): void {
     if (loggedIn) {
-      this.router.navigate(['/securehome']);
+      this.router.navigate(['/home']);
     }
   }
 }

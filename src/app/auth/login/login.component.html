@@ -1,4 +1,4 @@
-<div class="login-component">
+<mat-card class="login-component">
   <h1>Sign In</h1>
 
   <div *ngIf="errorMsg != null" class="alert alert-danger">
@@ -28,4 +28,4 @@
   </button>
   <br/>
   <a [routerLink]="['/resendCode']" class="resend-code">Resend Confirmation Code</a>
-</div>
+</mat-card>

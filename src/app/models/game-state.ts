@@ -5,6 +5,10 @@ import { PieceType } from './piece-type.enum';
 import { GameStateType } from './game-state-type.enum';
 
 export class GameState {
+    name: string;
+    isPrivate: boolean;
+    turnLength: number;
+
     // user 1
     player1: string;
     player1Team: TeamType;
@@ -30,9 +34,8 @@ export class GameState {
     piecePushedOff: PieceType;
     edgePushedOff: number;
 
-    constructor(player1Id: string, player2Id: string) {
+    constructor(player1Id: string) {
         this.player1 = player1Id;
-        this.player2 = player2Id;
         this.gameState = GameStateType.Setup;
     }
 }

@@ -1,0 +1,4 @@
+.create-game {
+    display: flex;
+    flex-direction: column;
+}

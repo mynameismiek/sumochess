@@ -8,6 +8,7 @@ import { FindGamesComponent } from './find-games/find-games.component';
 import { ViewGameComponent } from './view-game/view-game.component';
 import { CreateGameComponent } from './create-game/create-game.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'find', component: FindGamesComponent },
   { path: 'view/:id', component: ViewGameComponent },
   { path: 'view', component: ViewGameComponent },
+  { path: 'account', component: AccountComponent },
   { path: 'admin', component: AdminHomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
