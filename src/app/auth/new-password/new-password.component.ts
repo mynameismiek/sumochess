@@ -48,13 +48,13 @@ export class NewPasswordComponent implements OnInit, CognitoCallback {
     } else { // success
       // move to the next step
       console.log('redirecting');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }
   }
 
   isLoggedIn(message: string, isLoggedIn: boolean) {
     if (isLoggedIn) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLoginService } from './services/user-login.service';
 import { LoggedInCallback, CognitoUtil } from './services/cognito.service';
-import { Router } from '../../node_modules/@angular/router';
+import { Router, NavigationEnd } from '../../node_modules/@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,13 @@ export class AppComponent implements OnInit, LoggedInCallback {
 
   constructor(public loginService: UserLoginService, public cognitoUtil: CognitoUtil, public router: Router) {
     this.loggedIn = false;
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        if (!this.loggedIn) {
+          this.loginService.isAuthenticated(this);
+        }
+      });
   }
 
   ngOnInit() {
@@ -30,6 +38,6 @@ export class AppComponent implements OnInit, LoggedInCallback {
   logout(): void {
     this.loginService.logout();
     this.loginService.isAuthenticated(this);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/');
   }
 }

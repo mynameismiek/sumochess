@@ -128,7 +128,7 @@ export class UserLoginService {
     const cognitoUser = this.cognitoUtil.getCurrentUser();
 
     if (cognitoUser != null) {
-      cognitoUser.getSession(function (err, session) {
+      cognitoUser.getSession((err, session) => {
         if (err) {
           console.log('UserLoginService: Couldn\'t get the session: ' + err, err.stack);
           callback.isLoggedIn(err, false);

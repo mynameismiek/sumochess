@@ -26,7 +26,7 @@ export class UserActivityComponent implements LoggedInCallback {
 
     isLoggedIn(message: string, isLoggedIn: boolean) {
         if (!isLoggedIn) {
-            this.router.navigate(['/home/login']);
+            this.router.navigate(['/login']);
         } else {
             console.log('scanning DDB');
             this.ddb.getLogEntries(this.logdata);
